@@ -74,7 +74,7 @@ export const nodes = [
 
 export const edges = [
   { id: 'e1-2', source: '1', target: '2', label: '5 asdf asdf', animated: true },
-  { id: 'e1-3', source: '1', target: '3', label: '4', animated: false },
+  { id: 'e1-3', source: '1', target: '3', label: '3', animated: false },
   { id: 'e3-5', source: '3', target: '5', label: '5', animated: false},
   { id: 'e2-5', source: '2', target: '5', label: '2', animated: true },
   { id: 'e2-4', source: '2', target: '4', label: '7', animated: false },

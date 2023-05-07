@@ -8,6 +8,8 @@ import ReactFlow, {
   useEdgesState,
   ReactFlowProvider,
   Position,
+  getBezierPath,
+  getSmoothStepPath,
 } from "reactflow";
 
 import {
@@ -36,6 +38,12 @@ const OverviewFlow = () => {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
   const [reactFlowInstance, setReactFlowInstance] = useState(null);
+  const [top, setTop] = useState("0px");
+  const [left, setLeft] = useState("0px");
+
+  const inputReference = useRef(null);
+  const [currentSelectedEdge, setCurrentSelectedEdge] = useState({});
+  const [currentEdgeText, setCurrentEdgeText] = useState("");
 
   const onInit = (reactFlowInstance) => setReactFlowInstance(reactFlowInstance);
 
@@ -89,15 +97,27 @@ const OverviewFlow = () => {
     [reactFlowInstance]
   );
 
-  const edgesWithUpdatedTypes = edges.map((edge) => {
-    if (edge.sourceHandle) {
-      const edgeType = nodes.find((node) => node.type === "custom").data
-        .selects[edge.sourceHandle];
-      edge.type = edgeType;
-    }
+  const onEdgeDoubleClick = (event, edge) => {
+    // const [path, labelX, labelY] = getSmoothStepPath(edge)
 
+    setTop(`${event.clientY}px`);
+    setLeft(`${event.clientX}px`);
+    inputReference.current.focus();
+    setCurrentSelectedEdge(edge);
+  };
+
+  const changeLabelEdge = (edge, newLabel) => {
+    setEdges(
+      edges.map((obj) => {
+        return obj.id === edge.id ? changeLabelEdgeHelper(edge, newLabel) : obj;
+      })
+    );
+  };
+
+  const changeLabelEdgeHelper = (edge, newLabel) => {
+    edge.label = newLabel;
     return edge;
-  });
+  };
 
   useEffect(() => {
     console.log(nodes);
@@ -105,12 +125,37 @@ const OverviewFlow = () => {
   }, []);
 
   return (
-    <div className="dndflow">
+    <div className="dndflow" style={{ position: "relative" }}>
+      <div
+        style={{
+          position: "absolute",
+          height: "30px",
+          width: "100px",
+          top: top,
+          left: left,
+          zIndex: 100,
+        }}
+      >
+        <input
+          type="text"
+          ref={inputReference}
+          onKeyDown={(event) => {
+            if (event.key === "Enter") {
+              changeLabelEdge(currentSelectedEdge, currentEdgeText);
+              setCurrentEdgeText("");
+            }
+          }}
+          value={currentEdgeText}
+          onChange={(event) => {
+            setCurrentEdgeText(event.target.value);
+          }}
+        ></input>
+      </div>
       <ReactFlowProvider>
         <div className="reactflow-wrapper" ref={reactFlowWrapper}>
           <ReactFlow
             nodes={nodes}
-            edges={edgesWithUpdatedTypes}
+            edges={edges}
             onNodesChange={(changes) => {
               changes.forEach((change) => {
                 if (change.type == "remove") {
@@ -135,9 +180,7 @@ const OverviewFlow = () => {
               console.log("onConnect", connects);
               onConnect(connects);
             }}
-            onEdgeClick={(event) => {
-              console.log("onEdgeClick", event);
-            }}
+            onEdgeDoubleClick={onEdgeDoubleClick}
             onInit={onInit}
             attributionPosition="top-right"
             nodeTypes={nodeTypes}
