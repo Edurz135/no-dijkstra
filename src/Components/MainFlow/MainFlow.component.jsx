@@ -44,6 +44,7 @@ const OverviewFlow = () => {
   const inputReference = useRef(null);
   const [currentSelectedEdge, setCurrentSelectedEdge] = useState({});
   const [currentEdgeText, setCurrentEdgeText] = useState("");
+  const [isFocus, setIsFocus] = useState(false);
 
   const onInit = (reactFlowInstance) => setReactFlowInstance(reactFlowInstance);
 
@@ -104,6 +105,7 @@ const OverviewFlow = () => {
     setLeft(`${event.clientX}px`);
     inputReference.current.focus();
     setCurrentSelectedEdge(edge);
+    setIsFocus(true);
   };
 
   const changeLabelEdge = (edge, newLabel) => {
@@ -129,20 +131,23 @@ const OverviewFlow = () => {
       <div
         style={{
           position: "absolute",
-          height: "30px",
-          width: "100px",
+          height: "20px",
+          width: "40px",
           top: top,
           left: left,
           zIndex: 100,
+          display: isFocus ? 'block' : 'none',
         }}
       >
         <input
-          type="text"
+          style={{ width: "100%", height: "100%" }}
+          type="number"
           ref={inputReference}
           onKeyDown={(event) => {
             if (event.key === "Enter") {
               changeLabelEdge(currentSelectedEdge, currentEdgeText);
               setCurrentEdgeText("");
+              setIsFocus(false);
             }
           }}
           value={currentEdgeText}
@@ -173,14 +178,17 @@ const OverviewFlow = () => {
                   console.log("onNodesChanges", changes);
                 }
               });
-              console.log("onEdgesChange", changes);
+              // console.log("onEdgesChange", changes);
               onEdgesChange(changes);
             }}
             onConnect={(connects) => {
               console.log("onConnect", connects);
               onConnect(connects);
             }}
-            onEdgeDoubleClick={onEdgeDoubleClick}
+            onSelectionEnd={(event) => {
+              console.log("selection finished")
+            }}
+            onEdgeClick={onEdgeDoubleClick}
             onInit={onInit}
             attributionPosition="top-right"
             nodeTypes={nodeTypes}
