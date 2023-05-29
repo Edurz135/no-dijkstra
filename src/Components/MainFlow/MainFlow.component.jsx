@@ -9,7 +9,6 @@ import ReactFlow, {
   ReactFlowProvider,
   Position,
   getBezierPath,
-  getSmoothStepPath,
 } from "reactflow";
 
 import {
@@ -99,21 +98,41 @@ const OverviewFlow = () => {
   );
 
   const onEdgeDoubleClick = (event, edge) => {
-    // const [path, labelX, labelY] = getSmoothStepPath(edge)
+    const [path, labelX, labelY] = getBezierPath(edge)
+    const sourceNode = (getNodeWithId(nodes, edge.source));
+    const targetNode = (getNodeWithId(nodes, edge.target));
 
-    setTop(`${event.clientY}px`);
-    setLeft(`${event.clientX}px`);
+    console.log(event)
+    const labelPos = getCenter(sourceNode.position, targetNode.position);
+    setTop(`${labelPos.y}px`);
+    setLeft(`${labelPos.x}px`);
     inputReference.current.focus();
     setCurrentSelectedEdge(edge);
     setIsFocus(true);
   };
 
+  const getCenter = (sourcePos, targetPos) =>{
+    return {
+      x: (sourcePos.x + targetPos.x / 2),
+      y: (sourcePos.y + targetPos.y / 2)
+    }
+  }
   const changeLabelEdge = (edge, newLabel) => {
     setEdges(
       edges.map((obj) => {
         return obj.id === edge.id ? changeLabelEdgeHelper(edge, newLabel) : obj;
       })
     );
+  };
+
+  const getNodeWithId = (edges, id) => {
+    let result = null;
+    edges.forEach(edge => {
+      if (edge.id === id) {
+        result = edge;
+      }
+    });
+    return result;
   };
 
   const changeLabelEdgeHelper = (edge, newLabel) => {
@@ -171,6 +190,7 @@ const OverviewFlow = () => {
                 }
               });
               onNodesChange(changes);
+              setIsFocus(false);
             }}
             onEdgesChange={(changes) => {
               changes.forEach((change) => {
@@ -180,13 +200,12 @@ const OverviewFlow = () => {
               });
               // console.log("onEdgesChange", changes);
               onEdgesChange(changes);
+              setIsFocus(false);
             }}
             onConnect={(connects) => {
               console.log("onConnect", connects);
               onConnect(connects);
-            }}
-            onSelectionEnd={(event) => {
-              console.log("selection finished")
+              setIsFocus(false);
             }}
             onEdgeClick={onEdgeDoubleClick}
             onInit={onInit}
