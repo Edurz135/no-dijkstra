@@ -39,8 +39,7 @@
   display: flex;
   flex: 2;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: end;
 }
 
 .intro-text{

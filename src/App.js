@@ -1,6 +1,6 @@
 import React from "react";
 import OverviewFlow from "./Components/MainFlow/MainFlow.component";
-import EdgerPortrait from "./assets/imgs/EdgerPortrait.jpg";
+import EdgerPortrait from "./assets/imgs/EdgerPortrait.png";
 import "./App.css";
 
 function App() {
