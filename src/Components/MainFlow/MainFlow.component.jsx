@@ -44,7 +44,7 @@ const OverviewFlow = () => {
   const [currentSelectedEdge, setCurrentSelectedEdge] = useState({});
   const [currentEdgeText, setCurrentEdgeText] = useState("");
   const [isFocus, setIsFocus] = useState(false);
-  const route = new Graph();
+  const graph = new Map();
 
   const onInit = (reactFlowInstance) => setReactFlowInstance(reactFlowInstance);
 
@@ -57,7 +57,6 @@ const OverviewFlow = () => {
     event.preventDefault();
     event.dataTransfer.dropEffect = "move";
   }, []);
-
 
   const onDrop = useCallback(
     (event) => {
@@ -76,8 +75,8 @@ const OverviewFlow = () => {
         y: event.clientY - reactFlowBounds.top,
       });
 
-      const newNodeId = getId()
-      console.log(newNodeId)
+      const newNodeId = getId();
+      console.log(newNodeId);
       const newNode = {
         id: newNodeId.toString(),
         type,
@@ -105,7 +104,7 @@ const OverviewFlow = () => {
     setTop(`${event.clientY}px`);
     setLeft(`${event.clientX}px`);
     inputReference.current.focus();
-    
+
     setCurrentSelectedEdge(edge);
     setIsFocus(true);
   };
@@ -120,7 +119,7 @@ const OverviewFlow = () => {
 
   const getNodeWithId = (edges, id) => {
     let result = null;
-    edges.forEach(edge => {
+    edges.forEach((edge) => {
       if (edge.id === id) {
         result = edge;
       }
@@ -133,9 +132,15 @@ const OverviewFlow = () => {
     return edge;
   };
 
+  const getEdgesOfNode = (sourceNodeId) => {
+    return edges.filter(
+      (edge) =>
+        edge.source == sourceNodeId.toString() ||
+        edge.target == sourceNodeId.toString()
+    );
+  };
+
   useEffect(() => {
-    console.log(nodes);
-    console.log(edges);
     // route.addNode("A", { B: 1 });
     // route.addNode("B", { A: 1, C: 2, D: 4 });
     // route.addNode("C", { B: 2, D: 1 });
@@ -143,6 +148,25 @@ const OverviewFlow = () => {
 
     // route.path("A", "D"); // => [ 'A', 'B', 'C', 'D' ]
 
+    console.log(edges);
+    nodes.forEach((node) => {
+      const tempNode = new Map();
+      const tempNodeId = node.id;
+
+      //Add edges
+      const temp = getEdgesOfNode(tempNodeId);
+      temp.forEach((edge) => {
+        edge.source == tempNodeId.toString()
+          ? tempNode.set(edge.target, edge.label)
+          : tempNode.set(edge.source, edge.label);
+      });
+      graph.set(tempNodeId, tempNode);
+    });
+
+    console.log(graph);
+    // edges.forEach((edge) => {
+    //   console.log("edge: " + edge);
+    // });
   }, []);
 
   return (
@@ -155,7 +179,7 @@ const OverviewFlow = () => {
           top: top,
           left: left,
           zIndex: 100,
-          display: isFocus ? 'block' : 'none',
+          display: isFocus ? "block" : "none",
         }}
       >
         <input
@@ -184,10 +208,10 @@ const OverviewFlow = () => {
             onNodesChange={(changes) => {
               changes.forEach((change) => {
                 if (change.type == "remove") {
-                  console.log("onNodesChanges", changes);
+                  // console.log("onNodesChanges", changes);
                 }
                 if (change.type == "dimensions") {
-                  console.log("onNodesChanges", changes);
+                  // console.log("onNodesChanges", changes);
                 }
               });
               onNodesChange(changes);
@@ -196,7 +220,7 @@ const OverviewFlow = () => {
             onEdgesChange={(changes) => {
               changes.forEach((change) => {
                 if (change.type == "remove") {
-                  console.log("onNodesChanges", changes);
+                  // console.log("onNodesChanges", changes);
                 }
               });
               // console.log("onEdgesChange", changes);
@@ -204,7 +228,7 @@ const OverviewFlow = () => {
               setIsFocus(false);
             }}
             onConnect={(connects) => {
-              console.log("onConnect", connects);
+              // console.log("onConnect", connects);
               onConnect(connects);
               setIsFocus(false);
             }}
