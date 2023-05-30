@@ -7,10 +7,11 @@ export default () => {
   };
 
   return (
-    <aside>
+    <div className="control-container">
+      <span>CONTROLS</span>
       <div className="dndnode" onDragStart={(event) => onDragStart(event, 'default')} draggable>
-        Default Node
+        Node
       </div>
-    </aside>
+    </div>
   );
 };

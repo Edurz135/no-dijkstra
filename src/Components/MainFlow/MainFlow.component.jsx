@@ -8,7 +8,6 @@ import ReactFlow, {
   useEdgesState,
   ReactFlowProvider,
   Position,
-  getBezierPath,
 } from "reactflow";
 
 import {
@@ -20,6 +19,7 @@ import Sidebar from "./Sidebar";
 
 import "reactflow/dist/style.css";
 import "./overview.css";
+const Graph = require("node-dijkstra");
 
 const nodeTypes = {
   custom: CustomNode,
@@ -44,6 +44,7 @@ const OverviewFlow = () => {
   const [currentSelectedEdge, setCurrentSelectedEdge] = useState({});
   const [currentEdgeText, setCurrentEdgeText] = useState("");
   const [isFocus, setIsFocus] = useState(false);
+  const route = new Graph();
 
   const onInit = (reactFlowInstance) => setReactFlowInstance(reactFlowInstance);
 
@@ -56,6 +57,7 @@ const OverviewFlow = () => {
     event.preventDefault();
     event.dataTransfer.dropEffect = "move";
   }, []);
+
 
   const onDrop = useCallback(
     (event) => {
@@ -97,26 +99,15 @@ const OverviewFlow = () => {
     [reactFlowInstance]
   );
 
-  const onEdgeDoubleClick = (event, edge) => {
-    const [path, labelX, labelY] = getBezierPath(edge)
-    const sourceNode = (getNodeWithId(nodes, edge.source));
-    const targetNode = (getNodeWithId(nodes, edge.target));
-
-    console.log(event)
-    const labelPos = getCenter(sourceNode.position, targetNode.position);
-    setTop(`${labelPos.y}px`);
-    setLeft(`${labelPos.x}px`);
+  const onEdgeClick = (event, edge) => {
+    setTop(`${event.clientY}px`);
+    setLeft(`${event.clientX}px`);
     inputReference.current.focus();
+    
     setCurrentSelectedEdge(edge);
     setIsFocus(true);
   };
 
-  const getCenter = (sourcePos, targetPos) =>{
-    return {
-      x: (sourcePos.x + targetPos.x / 2),
-      y: (sourcePos.y + targetPos.y / 2)
-    }
-  }
   const changeLabelEdge = (edge, newLabel) => {
     setEdges(
       edges.map((obj) => {
@@ -143,6 +134,13 @@ const OverviewFlow = () => {
   useEffect(() => {
     console.log(nodes);
     console.log(edges);
+    // route.addNode("A", { B: 1 });
+    // route.addNode("B", { A: 1, C: 2, D: 4 });
+    // route.addNode("C", { B: 2, D: 1 });
+    // route.addNode("D", { C: 1, B: 4 });
+
+    // route.path("A", "D"); // => [ 'A', 'B', 'C', 'D' ]
+
   }, []);
 
   return (
@@ -175,6 +173,7 @@ const OverviewFlow = () => {
           }}
         ></input>
       </div>
+      <Sidebar />
       <ReactFlowProvider>
         <div className="reactflow-wrapper" ref={reactFlowWrapper}>
           <ReactFlow
@@ -207,7 +206,7 @@ const OverviewFlow = () => {
               onConnect(connects);
               setIsFocus(false);
             }}
-            onEdgeClick={onEdgeDoubleClick}
+            onEdgeClick={onEdgeClick}
             onInit={onInit}
             attributionPosition="top-right"
             nodeTypes={nodeTypes}
@@ -220,7 +219,6 @@ const OverviewFlow = () => {
             <Background color="#aaa" gap={16} />
           </ReactFlow>
         </div>
-        <Sidebar />
       </ReactFlowProvider>
     </div>
   );

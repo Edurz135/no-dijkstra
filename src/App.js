@@ -5,7 +5,7 @@ import "./App.css";
 
 function App() {
   return (
-    <div style={{ width: "100%" }}>
+    <div>
       <div className="head-container">
         <span className="head-title">DIJKSTRA</span>
         <br />
