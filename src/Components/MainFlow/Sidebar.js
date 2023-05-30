@@ -12,6 +12,17 @@ export default () => {
       <div className="dndnode" onDragStart={(event) => onDragStart(event, 'default')} draggable>
         Node
       </div>
+      <div className="control-algorithm">
+        <span>From:</span>
+        <br/>
+        <input></input>
+        <br/>
+        <span>To:</span>
+        <br/>
+        <input></input>
+        <br/>
+        <button type="button">Find Path</button>
+      </div>
     </div>
   );
 };

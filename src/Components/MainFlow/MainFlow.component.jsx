@@ -29,8 +29,8 @@ const minimapStyle = {
   height: 120,
 };
 
-let id = 0;
-const getId = () => `dndnode_${id++}`;
+let id = 7;
+const getId = () => id++;
 
 const OverviewFlow = () => {
   const reactFlowWrapper = useRef(null);
@@ -76,8 +76,10 @@ const OverviewFlow = () => {
         y: event.clientY - reactFlowBounds.top,
       });
 
+      const newNodeId = getId()
+      console.log(newNodeId)
       const newNode = {
-        id: getId(),
+        id: newNodeId.toString(),
         type,
         position,
         sourcePosition: Position.Right,
@@ -91,7 +93,7 @@ const OverviewFlow = () => {
           alignItems: "center",
           justifyContent: "center",
         },
-        data: { label: `${type} node` },
+        data: { label: `${(newNodeId + 9).toString(36).toUpperCase()}` },
       };
 
       setNodes((nds) => nds.concat(newNode));

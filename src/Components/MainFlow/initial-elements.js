@@ -20,7 +20,7 @@ export const nodes = [
     id: '1',
     type: 'default',
     data: {
-      label: 'A1',
+      label: 'A',
     },
     position: { x: 0, y: 0 },
     ...nodeDefaults,
@@ -29,7 +29,7 @@ export const nodes = [
     id: '2',
     type: 'default',
     data: {
-      label: 'B2',
+      label: 'B',
     },
     position: { x: 200, y: 100 },
     ...nodeDefaults,
@@ -38,7 +38,7 @@ export const nodes = [
     id: '3',
     type: 'default',
     data: {
-      label: 'C3',
+      label: 'C',
     },
     position: { x: 200, y: -100 },
     ...nodeDefaults,
@@ -47,7 +47,7 @@ export const nodes = [
     id: '4',
     type: 'default',
     data: {
-      label: 'D4',
+      label: 'D',
     },
     position: { x: 400, y: 100 },
     ...nodeDefaults,
@@ -56,7 +56,7 @@ export const nodes = [
     id: '5',
     type: 'default',
     data: {
-      label: 'E5',
+      label: 'E',
     },
     position: { x: 400, y: -100 },
     ...nodeDefaults,
@@ -65,7 +65,7 @@ export const nodes = [
     id: '6',
     type: 'default',
     data: {
-      label: 'F6',
+      label: 'F',
     },
     position: { x: 600, y: 0 },
     ...nodeDefaults,

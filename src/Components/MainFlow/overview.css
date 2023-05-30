@@ -77,9 +77,24 @@
 .control-container {
   position: absolute;
   z-index: 1;
-  margin: 10px;
+  padding: 10px;
+  margin: 5px;
+  backdrop-filter: blur(1px);
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 15px;
 }
 
+.control-algorithm {
+  width: 80px;
+}
+
+.control-algorithm input, button{
+  width: 100%;
+}
+
+.control-algorithm button {
+  border-radius: 10px;
+}
 
 .dndflow .dndnode {
   border: 1px solid black;
