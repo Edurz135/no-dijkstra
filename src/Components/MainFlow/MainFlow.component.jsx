@@ -67,7 +67,6 @@ const OverviewFlow = () => {
       const type = event.dataTransfer.getData("application/reactflow");
       // check if the dropped element is valid
       if (typeof type === "undefined" || !type) {
-        console.log("ASDF1");
         return;
       }
 
@@ -77,7 +76,6 @@ const OverviewFlow = () => {
       });
 
       const newNodeId = getId();
-      console.log(newNodeId);
       const newNode = {
         id: newNodeId.toString(),
         type,
@@ -107,6 +105,7 @@ const OverviewFlow = () => {
     inputReference.current.focus();
 
     setCurrentSelectedEdge(edge);
+    createGraph();
     setIsFocus(true);
   };
 
@@ -116,16 +115,6 @@ const OverviewFlow = () => {
         return obj.id === edge.id ? changeLabelEdgeHelper(edge, newLabel) : obj;
       })
     );
-  };
-
-  const getNodeWithId = (edges, id) => {
-    let result = null;
-    edges.forEach((edge) => {
-      if (edge.id === id) {
-        result = edge;
-      }
-    });
-    return result;
   };
 
   const getNodeIdWithLabel = (label) => {
@@ -158,13 +147,15 @@ const OverviewFlow = () => {
    * @param {char} target - The whatsit to use (or whatever).
    * @returns A useful value.
    */
-  const FindShortestPath = (source, target) => {
+  const FindShortestPath = async (source, target) => {
+    createGraph();
+
     const sourceId = getNodeIdWithLabel(source);
     const targetId = getNodeIdWithLabel(target);
 
-    console.log(sourceId)
-    console.log(targetId)
     const path = route.path(sourceId, targetId);
+
+    console.log(path);
 
     const temp = edges.map((edge) => {
       return changeAnimatedEdgeHelper(edge, false);
@@ -191,11 +182,18 @@ const OverviewFlow = () => {
 
   const changeAnimatedEdgeHelper = (edge, value) => {
     edge.animated = value;
+    edge.style =
+      value == true
+        ? {
+            stroke: "#DC2510",
+          }
+        : {
+            stroke: "#b8b8b8",
+          };
     return edge;
   };
 
-  useEffect(() => {
-    console.log(edges);
+  const createGraph = () => {
     nodes.forEach((node) => {
       const tempNode = new Map();
       const tempNodeId = node.id;
@@ -212,6 +210,10 @@ const OverviewFlow = () => {
     });
     const temp = new Graph(graph);
     setRoute(temp);
+  };
+
+  useEffect(() => {
+    createGraph();
   }, []);
 
   return (
@@ -251,30 +253,17 @@ const OverviewFlow = () => {
             nodes={nodes}
             edges={edges}
             onNodesChange={(changes) => {
-              changes.forEach((change) => {
-                if (change.type == "remove") {
-                  // console.log("onNodesChanges", changes);
-                }
-                if (change.type == "dimensions") {
-                  // console.log("onNodesChanges", changes);
-                }
-              });
-              onNodesChange(changes);
               setIsFocus(false);
+              onNodesChange(changes);
             }}
             onEdgesChange={(changes) => {
-              changes.forEach((change) => {
-                if (change.type == "remove") {
-                  // console.log("onNodesChanges", changes);
-                }
-              });
-              // console.log("onEdgesChange", changes);
               onEdgesChange(changes);
               setIsFocus(false);
             }}
             onConnect={(connects) => {
-              // console.log("onConnect", connects);
-              onConnect(connects);
+              var temp = connects;
+              temp.label = '1';
+              onConnect(temp);
               setIsFocus(false);
             }}
             onEdgeClick={onEdgeClick}
