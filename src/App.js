@@ -7,6 +7,9 @@ function App() {
   return (
     <div>
       <div className="head-container">
+        <br />
+        <br />
+        <br />
         <span className="head-title">DIJKSTRA</span>
         <br />
         <span className="head-subtitle">Algorithm - 1956</span>
