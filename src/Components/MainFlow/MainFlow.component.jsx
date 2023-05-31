@@ -44,6 +44,7 @@ const OverviewFlow = () => {
   const [currentSelectedEdge, setCurrentSelectedEdge] = useState({});
   const [currentEdgeText, setCurrentEdgeText] = useState("");
   const [isFocus, setIsFocus] = useState(false);
+  const [route, setRoute] = useState(null);
   const graph = new Map();
 
   const onInit = (reactFlowInstance) => setReactFlowInstance(reactFlowInstance);
@@ -127,6 +128,16 @@ const OverviewFlow = () => {
     return result;
   };
 
+  const getNodeIdWithLabel = (label) => {
+    let result = null;
+    nodes.forEach((node) => {
+      if (node.data.label == label) {
+        result = node.id;
+      }
+    });
+    return result;
+  };
+
   const changeLabelEdgeHelper = (edge, newLabel) => {
     edge.label = newLabel;
     return edge;
@@ -140,14 +151,50 @@ const OverviewFlow = () => {
     );
   };
 
+  /**
+   * Find the shortest path from two nodes.
+   *
+   * @param {char} source - The whatsit to use (or whatever).
+   * @param {char} target - The whatsit to use (or whatever).
+   * @returns A useful value.
+   */
+  const FindShortestPath = (source, target) => {
+    const sourceId = getNodeIdWithLabel(source);
+    const targetId = getNodeIdWithLabel(target);
+
+    console.log(sourceId)
+    console.log(targetId)
+    const path = route.path(sourceId, targetId);
+
+    const temp = edges.map((edge) => {
+      return changeAnimatedEdgeHelper(edge, false);
+    });
+    setEdges(temp);
+
+    for (let i = 0; i < path.length - 1; i++) {
+      const s = path[i];
+      const t = path[i + 1];
+      UpdateEdgeState(s, t);
+    }
+  };
+
+  const UpdateEdgeState = (source, target) => {
+    const temp = edges.map((edge) => {
+      return (edge.source == source && edge.target == target) ||
+        (edge.target == source && edge.source == target)
+        ? changeAnimatedEdgeHelper(edge, true)
+        : edge;
+    });
+    console.log(temp);
+    setEdges(temp);
+  };
+
+  const changeAnimatedEdgeHelper = (edge, value) => {
+    edge.animated = value;
+    return edge;
+  };
+
   useEffect(() => {
-    // route.addNode("A", { B: 1 });
-    // route.addNode("B", { A: 1, C: 2, D: 4 });
-    // route.addNode("C", { B: 2, D: 1 });
-    // route.addNode("D", { C: 1, B: 4 });
-
-    // route.path("A", "D"); // => [ 'A', 'B', 'C', 'D' ]
-
     console.log(edges);
     nodes.forEach((node) => {
       const tempNode = new Map();
@@ -157,16 +204,14 @@ const OverviewFlow = () => {
       const temp = getEdgesOfNode(tempNodeId);
       temp.forEach((edge) => {
         edge.source == tempNodeId.toString()
-          ? tempNode.set(edge.target, edge.label)
-          : tempNode.set(edge.source, edge.label);
+          ? tempNode.set(edge.target, Number(edge.label))
+          : tempNode.set(edge.source, Number(edge.label));
       });
+
       graph.set(tempNodeId, tempNode);
     });
-
-    console.log(graph);
-    // edges.forEach((edge) => {
-    //   console.log("edge: " + edge);
-    // });
+    const temp = new Graph(graph);
+    setRoute(temp);
   }, []);
 
   return (
@@ -199,7 +244,7 @@ const OverviewFlow = () => {
           }}
         ></input>
       </div>
-      <Sidebar />
+      <Sidebar FindPathHandler={FindShortestPath} />
       <ReactFlowProvider>
         <div className="reactflow-wrapper" ref={reactFlowWrapper}>
           <ReactFlow

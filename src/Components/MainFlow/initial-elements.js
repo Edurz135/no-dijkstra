@@ -73,11 +73,11 @@ export const nodes = [
 ];
 
 export const edges = [
-  { id: 'e1-2', source: '1', target: '2', label: '5', animated: true },
+  { id: 'e1-2', source: '1', target: '2', label: '5', animated: false },
   { id: 'e1-3', source: '1', target: '3', label: '3', animated: false },
   { id: 'e3-5', source: '3', target: '5', label: '5', animated: false},
-  { id: 'e2-5', source: '2', target: '5', label: '2', animated: true },
+  { id: 'e2-5', source: '2', target: '5', label: '2', animated: false },
   { id: 'e2-4', source: '2', target: '4', label: '7', animated: false },
   { id: 'e4-6', source: '4', target: '6', label: '10', animated: false },
-  { id: 'e5-6', source: '5', target: '6', label: '3', animated: true },
+  { id: 'e5-6', source: '5', target: '6', label: '3', animated: false },
 ];
