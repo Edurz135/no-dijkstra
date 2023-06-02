@@ -49,55 +49,51 @@ const OverviewFlow = () => {
 
   const onInit = (reactFlowInstance) => setReactFlowInstance(reactFlowInstance);
 
-  const onConnect = useCallback(
-    (params) => setEdges((eds) => addEdge(params, eds)),
-    []
+  const onConnect = useCallback((params) =>
+    setEdges((eds) => addEdge(params, eds))
   );
 
   const onDragOver = useCallback((event) => {
     event.preventDefault();
     event.dataTransfer.dropEffect = "move";
-  }, []);
+  });
 
-  const onDrop = useCallback(
-    (event) => {
-      event.preventDefault();
+  const onDrop = useCallback((event) => {
+    event.preventDefault();
 
-      const reactFlowBounds = reactFlowWrapper.current.getBoundingClientRect();
-      const type = event.dataTransfer.getData("application/reactflow");
-      // check if the dropped element is valid
-      if (typeof type === "undefined" || !type) {
-        return;
-      }
+    const reactFlowBounds = reactFlowWrapper.current.getBoundingClientRect();
+    const type = event.dataTransfer.getData("application/reactflow");
+    // check if the dropped element is valid
+    if (typeof type === "undefined" || !type) {
+      return;
+    }
 
-      const position = reactFlowInstance.project({
-        x: event.clientX - reactFlowBounds.left,
-        y: event.clientY - reactFlowBounds.top,
-      });
+    const position = reactFlowInstance.project({
+      x: event.clientX - reactFlowBounds.left,
+      y: event.clientY - reactFlowBounds.top,
+    });
 
-      const newNodeId = getId();
-      const newNode = {
-        id: newNodeId.toString(),
-        type,
-        position,
-        sourcePosition: Position.Right,
-        targetPosition: Position.Left,
-        style: {
-          borderRadius: "100%",
-          backgroundColor: "#fff",
-          width: 50,
-          height: 50,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        },
-        data: { label: `${(newNodeId + 9).toString(36).toUpperCase()}` },
-      };
+    const newNodeId = getId();
+    const newNode = {
+      id: newNodeId.toString(),
+      type,
+      position,
+      sourcePosition: Position.Right,
+      targetPosition: Position.Left,
+      style: {
+        borderRadius: "100%",
+        backgroundColor: "#fff",
+        width: 50,
+        height: 50,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      },
+      data: { label: `${(newNodeId + 9).toString(36).toUpperCase()}` },
+    };
 
-      setNodes((nds) => nds.concat(newNode));
-    },
-    [reactFlowInstance]
-  );
+    setNodes((nds) => nds.concat(newNode));
+  });
 
   const onEdgeClick = (event, edge) => {
     setTop(`${event.clientY}px`);
@@ -120,7 +116,7 @@ const OverviewFlow = () => {
   const getNodeIdWithLabel = (label) => {
     let result = null;
     nodes.forEach((node) => {
-      if (node.data.label == label) {
+      if (node.data.label === label) {
         result = node.id;
       }
     });
@@ -135,8 +131,8 @@ const OverviewFlow = () => {
   const getEdgesOfNode = (sourceNodeId) => {
     return edges.filter(
       (edge) =>
-        edge.source == sourceNodeId.toString() ||
-        edge.target == sourceNodeId.toString()
+        edge.source === sourceNodeId.toString() ||
+        edge.target === sourceNodeId.toString()
     );
   };
 
@@ -171,8 +167,8 @@ const OverviewFlow = () => {
 
   const UpdateEdgeState = (source, target) => {
     const temp = edges.map((edge) => {
-      return (edge.source == source && edge.target == target) ||
-        (edge.target == source && edge.source == target)
+      return (edge.source === source && edge.target === target) ||
+        (edge.target === source && edge.source === target)
         ? changeAnimatedEdgeHelper(edge, true)
         : edge;
     });
@@ -183,7 +179,7 @@ const OverviewFlow = () => {
   const changeAnimatedEdgeHelper = (edge, value) => {
     edge.animated = value;
     edge.style =
-      value == true
+      value === true
         ? {
             stroke: "#DC2510",
           }
@@ -201,7 +197,7 @@ const OverviewFlow = () => {
       //Add edges
       const temp = getEdgesOfNode(tempNodeId);
       temp.forEach((edge) => {
-        edge.source == tempNodeId.toString()
+        edge.source === tempNodeId.toString()
           ? tempNode.set(edge.target, Number(edge.label))
           : tempNode.set(edge.source, Number(edge.label));
       });
@@ -214,7 +210,7 @@ const OverviewFlow = () => {
 
   useEffect(() => {
     createGraph();
-  }, []);
+  });
 
   return (
     <div className="dndflow" style={{ position: "relative" }}>
@@ -262,7 +258,7 @@ const OverviewFlow = () => {
             }}
             onConnect={(connects) => {
               var temp = connects;
-              temp.label = '1';
+              temp.label = "1";
               onConnect(temp);
               setIsFocus(false);
             }}

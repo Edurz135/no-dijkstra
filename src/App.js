@@ -45,7 +45,7 @@ function App() {
           </div>
         </div>
         <div className="sub-container2">
-          <img src={EdgerPortrait} style={{height: "100%"}}/>
+          <img src={EdgerPortrait} alt="Edsger W. Dijkstra" style={{height: "100%"}}/>
         </div>
       </div>
       <div style={{ width: "100%", height: "100vh" }}>
