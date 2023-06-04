@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default (props) => {
+const SideBar = (props) => {
   const onDragStart = (event, nodeType) => {
     event.dataTransfer.setData("application/reactflow", nodeType);
     event.dataTransfer.effectAllowed = "move";
@@ -52,3 +52,5 @@ export default (props) => {
     </div>
   );
 };
+
+export default SideBar;

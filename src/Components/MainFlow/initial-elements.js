@@ -1,5 +1,4 @@
-import React from 'react';
-import { MarkerType, Position } from 'reactflow';
+import {Position} from 'reactflow';
 
 const nodeDefaults = {
   sourcePosition: Position.Right,
