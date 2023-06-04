@@ -23,16 +23,20 @@ export default (props) => {
         <span>From:</span>
         <br />
         <input
+          maxLength={1}
           onChange={(e) => {
-            setSource(e.target.value);
+            const val = e.target.value.toUpperCase();
+            setSource(val);
           }}
         ></input>
         <br />
         <span>To:</span>
         <br />
         <input
+          maxLength={1}
           onChange={(e) => {
-            setTarget(e.target.value);
+            const val = e.target.value.toUpperCase();
+            setTarget(val);
           }}
         ></input>
         <br />

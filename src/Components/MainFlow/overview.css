@@ -88,8 +88,13 @@
   width: 80px;
 }
 
-.control-algorithm input, button{
+.control-algorithm input,
+button {
   width: 100%;
+}
+
+.control-algorithm input {
+  text-transform: uppercase;
 }
 
 .control-algorithm button {
