@@ -1,0 +1,25 @@
+{
+    "head": {
+      "title": "DIJKSTRA",
+      "subtitle": "Algorithm - 1956"
+    },
+    "intro": {
+      "card-one": {
+        "title": "¿Qué es Dijkstra?",
+        "desc": "El algoritmo de Dijkstra es un algoritmo para encontrar los caminos más cortos entre nodos de un grafo ponderado, que puede representar, por ejemplo, redes de carreteras. Fue concebido por el informático Edsger W. Dijkstra en 1956 y publicado tres años después."
+      },
+      "card-two": {
+        "title": "¿Por qué esta página ha sido creada?",
+        "desc": "Se ha creado para mostrar la potencia del algoritmo de Dijkstra a través de una interfaz gráfica visualmente interactiva. Esta página de proyecto universitario ofrece una plataforma fácil de usar para comprender y explorar la funcionalidad del algoritmo. Con controles intuitivos y visualizaciones cautivadoras, los usuarios pueden introducir sus propios gráficos, seleccionar los nodos de origen y destino y ser testigos de cómo el algoritmo calcula dinámicamente el camino más corto. Esta página proporciona una experiencia atractiva y educativa centrada en el algoritmo de Dijkstra."
+      }
+    },
+    "control": {
+      "title": "CONTROLES",
+      "node": "Nodo",
+      "from": "De:",
+      "to": "A:",
+      "find-btn": "Ejecutar"
+    }
+  }
+  
+  

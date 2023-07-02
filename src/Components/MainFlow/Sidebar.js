@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useTranslation } from 'react-i18next'
 
 const SideBar = (props) => {
+  const { t } = useTranslation();
   const onDragStart = (event, nodeType) => {
     event.dataTransfer.setData("application/reactflow", nodeType);
     event.dataTransfer.effectAllowed = "move";
@@ -11,16 +13,16 @@ const SideBar = (props) => {
 
   return (
     <div className="control-container">
-      <span>CONTROLS</span>
+      <span>{t("control.title")}</span>
       <div
         className="dndnode"
         onDragStart={(event) => onDragStart(event, "default")}
         draggable
       >
-        Node
+        {t("control.node")}
       </div>
       <div className="control-algorithm">
-        <span>From:</span>
+        <span>{t("control.from")}</span>
         <br />
         <input
           maxLength={1}
@@ -30,7 +32,7 @@ const SideBar = (props) => {
           }}
         ></input>
         <br />
-        <span>To:</span>
+        <span>{t("control.to")}</span>
         <br />
         <input
           maxLength={1}
@@ -46,7 +48,7 @@ const SideBar = (props) => {
             props.FindPathHandler(source, target);
           }}
         >
-          Find Path
+          {t("control.find-btn")}
         </button>
       </div>
     </div>

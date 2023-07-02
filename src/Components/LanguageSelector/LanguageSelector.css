@@ -1,0 +1,92 @@
+:root {
+  --on-primary: #f9e9d1;
+  --primary: #f9c42c;
+  --secondary: #dc2510;
+  --on-secondary: #2e0b07;
+  --tertiary: #56cfc9;
+}
+
+.rad-label {
+  display: flex;
+  align-items: center;
+
+  border-radius: 10px;
+  padding: 14px 12px;
+  margin: 10px 0;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.rad-label:hover {
+  background: rgba(185, 185, 185, 0.144);
+}
+/* .rad-label:focus-within {
+  background: var(--on-primary);
+  background: hsla(0, 0%, 100%, 0.14);
+} */
+
+.rad-input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  z-index: -1;
+}
+
+.rad-design {
+  width: 14px;
+  height: 14px;
+  border-radius: 100px;
+  /* 
+  background: linear-gradient(
+    to right bottom,
+    var(--on-primary),
+    var(--secondary)
+  ); */
+  background: var(--secondary);
+  position: relative;
+}
+
+.rad-design::before {
+  content: "";
+
+  display: block;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  padding-left: 0px;
+  background: var(--on-primary);
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+.rad-input:checked + .rad-design::before {
+  transform: scale(0);
+}
+
+.rad-text {
+  color: hsl(0, 0%, 60%);
+  margin-left: 0.8rem;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 900;
+  transition: 0.3s;
+}
+
+.rad-input:checked ~ .rad-text {
+  color: hsl(0, 0%, 40%);
+}
+
+/* ABS */
+/* ====================================================== */
+.abs-site-link {
+  position: fixed;
+  bottom: 40px;
+  left: 20px;
+  color: hsla(0, 0%, 0%, 0.5);
+  font-size: 16px;
+}
