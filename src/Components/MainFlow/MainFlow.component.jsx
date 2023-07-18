@@ -106,6 +106,12 @@ const OverviewFlow = () => {
   };
 
   const changeLabelEdge = (edge, newLabel) => {
+    //Validations
+    if(parseInt(newLabel) < 1) {
+      alert('El valor ingresado es inválido.')
+      return;
+    }
+
     setEdges(
       edges.map((obj) => {
         return obj.id === edge.id ? changeLabelEdgeHelper(edge, newLabel) : obj;
