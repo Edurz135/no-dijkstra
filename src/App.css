@@ -124,6 +124,46 @@
 
 .description-sec {
   background-color: var(--on-primary);
+  display: flex;
+  flex-direction: column;
+}
+
+.description-sec .col {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: start;
+}
+
+.description-sec .row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: start;
+}
+.description-sec .row .card { 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
+  margin: 1.3rem 2rem;
+  align-items: center;
+}
+.description-sec .row .card .title {
+  font-size: 3rem;
+  color: var(--secondary);
+}
+
+.description-sec .row .card .description {
+  width: 100%;
+  font-size: 1.3rem;
+  font-family: Poppins;
+  color: var(--on-secondary);
+  /* text-align: justify; */
+  text-align: center;
 }
 
 .algorithm-sec {
