@@ -32,43 +32,49 @@ function App() {
           <img src="/EdgerPortraitWithoutMouth.png" />
         </div>
       </div>
-      <div className="sec-container description-sec">
-        <div className="col">
+      <div className="sec-container description-sec container-fluid">
+        <div className="row align-items-center">
           <div className="row">
-            <div className="card">
-              <p className="title">ORIGIN</p>
-              <p className="description">Created by Edsger Dijkstra on 1956</p>
+            <div className="col-md-6">
+              <div className="board">
+                <p className="title">ORIGIN</p>
+                <p className="description">Created by Edsger Dijkstra on 1956</p>
+              </div>
             </div>
-            <div className="card">
-              <p className="title">ALGORITHM</p>
-              <p className="description">
-                An algorithm for finding the shortest paths between nodes in a
-                weighted graph
-              </p>
+            <div className="col-md-6">
+              <div className="board">
+                <p className="title">ALGORITHM</p>
+                <p className="description">
+                  An algorithm for finding the shortest paths between nodes in a
+                  weighted graph
+                </p>
+              </div>
             </div>
-          </div>
-          <div className="row">
-            <div className="card">
-              <p className="title">IMPORTANCE</p>
-              <p className="description">
-                Most influential algorithms in the history of computer science
-                and graph theory. Had a significant impact on numerous fields of
-                study and technologies that we use today.
-              </p>
+            <div className="col-md-6">
+              <div className="board">
+                <p className="title">IMPORTANCE</p>
+                <p className="description">
+                  Most influential algorithms in the history of computer science
+                  and graph theory. Had a significant impact on numerous fields of
+                  study and technologies that we use today.
+                </p>
+              </div>
             </div>
-            <div className="card">
-              <p className="title">APPLICATIONS</p>
-              <p className="description">
-                Applied on route planning in maps, routing protocols in computer
-                networks, analysis of transportation, among others.
-              </p>
+            <div className="col-md-6">
+              <div className="board">
+                <p className="title">APPLICATIONS</p>
+                <p className="description">
+                  Applied on route planning in maps, routing protocols in computer
+                  networks, analysis of transportation, among others.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div className="sec-container algorithm-sec"></div>
       <div className="sec-container about-sec"></div>
-    </div>
+    </div >
   );
 }
 
