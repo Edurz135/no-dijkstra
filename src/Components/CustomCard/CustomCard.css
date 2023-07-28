@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  font-family: Bayon, Poppins;
+}
+
+:root {
+  --on-primary: #f9e9d1;
+  --primary: #f9c42c;
+  --secondary: #dc2510;
+  --on-secondary: #2e0b07;
+  --on-secondary-60: rgba(46, 11, 7, 0.6);
+  --tertiary: #56cfc9;
+}
+
+.custom-card { 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.custom-card > .title {
+  font-size: 3rem;
+  color: var(--secondary);
+}
+
+.custom-card > .description {
+  font-size: 1.3rem;
+  font-family: Poppins;
+  color: var(--on-secondary);
+  text-align: center;
+}

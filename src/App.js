@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import CustomCard from "./Components/CustomCard/CustomCard";
 // import { useTranslation } from 'react-i18next'
 // import LanguageSelector from "./Components/LanguageSelector/LanguageSelector";
 function App() {
@@ -36,38 +37,16 @@ function App() {
         <div className="row align-items-center">
           <div className="row">
             <div className="col-md-6">
-              <div className="board">
-                <p className="title">ORIGIN</p>
-                <p className="description">Created by Edsger Dijkstra on 1956</p>
-              </div>
+              <CustomCard title="ORIGIN" description="Created by Edsger Dijkstra on 1956" />
             </div>
             <div className="col-md-6">
-              <div className="board">
-                <p className="title">ALGORITHM</p>
-                <p className="description">
-                  An algorithm for finding the shortest paths between nodes in a
-                  weighted graph
-                </p>
-              </div>
+              <CustomCard title="ALGORITHM" description="An algorithm for finding the shortest paths between nodes in a weighted graph" />
             </div>
             <div className="col-md-6">
-              <div className="board">
-                <p className="title">IMPORTANCE</p>
-                <p className="description">
-                  Most influential algorithms in the history of computer science
-                  and graph theory. Had a significant impact on numerous fields of
-                  study and technologies that we use today.
-                </p>
-              </div>
+              <CustomCard title="IMPORTANCE" description="Most influential algorithms in the history of computer science and graph theory. Had a significant impact on numerous fields of study and technologies that we use today." />
             </div>
             <div className="col-md-6">
-              <div className="board">
-                <p className="title">APPLICATIONS</p>
-                <p className="description">
-                  Applied on route planning in maps, routing protocols in computer
-                  networks, analysis of transportation, among others.
-                </p>
-              </div>
+              <CustomCard title="APPLICATIONS" description="Applied on route planning in maps, routing protocols in computer networks, analysis of transportation, among others." />
             </div>
           </div>
         </div>

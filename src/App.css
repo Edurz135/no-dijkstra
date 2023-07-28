@@ -127,34 +127,8 @@
   flex-direction: column;
 }
 
-/* .description-sec .cola {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  min-height: 100vh;
-  justify-content: center;
-  align-items: start;
-} */
-
 .description-sec > .row {
   min-height: 100vh;
-}
-.board { 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.board .title {
-  font-size: 3rem;
-  color: var(--secondary);
-}
-
-.board .description {
-  font-size: 1.3rem;
-  font-family: Poppins;
-  color: var(--on-secondary);
-  text-align: center;
 }
 
 .algorithm-sec {
