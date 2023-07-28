@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import CustomCard from "./Components/CustomCard/CustomCard";
+import CustomNavbar from "./Components/CustomNavbar/CustomNavbar";
 // import { useTranslation } from 'react-i18next'
 // import LanguageSelector from "./Components/LanguageSelector/LanguageSelector";
 function App() {
@@ -8,6 +9,7 @@ function App() {
   return (
     <div>
       <div className="sec-container home-sec">
+        <CustomNavbar />
         <div className="content-layer">
           <div className="nav">
             <span className="logo">EDURZ</span>
@@ -34,6 +36,7 @@ function App() {
         </div>
       </div>
       <div className="sec-container description-sec container-fluid">
+        <CustomNavbar />
         <div className="row align-items-center">
           <div className="row">
             <div className="col-md-6">
@@ -51,8 +54,8 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="sec-container algorithm-sec"></div>
-      <div className="sec-container about-sec"></div>
+      <div className="sec-container algorithm-sec"><CustomNavbar /></div>
+      <div className="sec-container about-sec"><CustomNavbar /></div>
     </div >
   );
 }
