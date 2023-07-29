@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import CustomCard from "./Components/CustomCard/CustomCard";
 import CustomNavbar from "./Components/CustomNavbar/CustomNavbar";
+import CustomLink from "./Components/CustomLink/CustomLink";
 // import { useTranslation } from 'react-i18next'
 // import LanguageSelector from "./Components/LanguageSelector/LanguageSelector";
 function App() {
@@ -55,7 +56,19 @@ function App() {
         </div>
       </div>
       <div className="sec-container algorithm-sec"><CustomNavbar /></div>
-      <div className="sec-container about-sec"><CustomNavbar /></div>
+      <div className="sec-container about-sec container-fluid">
+        <CustomNavbar />
+        <div className="row align-items-center">
+          <div className="row row-lg-6 justify-content-center">
+            <p className="title">I AM ON A MISSION TO PROVIDE AN</p>
+            <p className="title">EASILY <span className="title-variant">ACCESSIBLE PLATFORM</span></p>
+            <p className="description">My mission is to provide an easily accessible platform for students to comprehend the workings of Dijkstra's algorithm in a simpler and more straightforward manner.</p>
+            <CustomLink />
+          </div>
+        </div>
+      </div>
+      <div>
+      </div>
     </div >
   );
 }

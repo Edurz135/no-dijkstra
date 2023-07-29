@@ -138,3 +138,25 @@
 .about-sec {
   background-color: var(--on-primary);
 }
+
+.about-sec > .row {
+  min-height: 100vh;
+}
+
+.about-sec > .row > .row > .title {
+  font-size: 3rem;
+  line-height: 2rem;
+  color: var(--on-secondary);
+  text-align: center;
+}
+
+.about-sec > .row > .row .title-variant {
+  color: var(--secondary);
+}
+
+.about-sec > .row > .row > .description {
+  font-size: 1.3rem;
+  font-family: Poppins;
+  color: var(--on-secondary);
+  text-align: center;
+}
