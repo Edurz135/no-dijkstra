@@ -23,6 +23,7 @@
   position: relative;
 }
 
+
 .home-sec {
   min-height: 100vh;
   background-color: var(--primary);
@@ -119,6 +120,43 @@
 
 .home-sec .bg-layer img {
   height: 100%;
+}
+.home-sec .mouth {
+  animation-name: mymove;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-duration: 1s;
+}
+
+@keyframes mymove {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  15% {
+    transform: translate(10px, 25px);
+  }
+  50% {
+    transform: translate(0px, 0px);
+  }
+  65% {
+    transform: translate(10px, 25px);
+  }
+  80% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(10px, 25px);
+  }
+}
+
+.home-sec .words {
+  top: 400px;
+}
+
+.home-sec .words span {
+  font-family: "Racing Sans One", cursive;
+  color: var(--on-secondary);
+  font-size: 6rem;
 }
 
 .description-sec {
