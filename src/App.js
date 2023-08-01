@@ -3,6 +3,7 @@ import "./App.css";
 import CustomCard from "./Components/CustomCard/CustomCard";
 import CustomNavbar from "./Components/CustomNavbar/CustomNavbar";
 import CustomLink from "./Components/CustomLink/CustomLink";
+import CustomFooter from "./Components/CustomFooter/CustomFooter";
 // import { useTranslation } from 'react-i18next'
 // import LanguageSelector from "./Components/LanguageSelector/LanguageSelector";
 function App() {
@@ -43,7 +44,7 @@ function App() {
           <span>DIJKSTRA</span>
         </div>
       </div>
-      <div className="sec-container description-sec container-fluid" id="description">
+      <div className="sec-container description-sec" id="description">
         <CustomNavbar />
         <div className="row align-items-center">
           <div className="row">
@@ -77,7 +78,8 @@ function App() {
       <div className="sec-container algorithm-sec" id="algorithm">
         <CustomNavbar />
       </div>
-      <div className="sec-container about-sec container-fluid" id="about">
+      <div className="sec-container about-sec" id="about" style={{ position: "relative" }}>
+        <CustomFooter />
         <CustomNavbar />
         <div className="row align-items-center">
           <div className="row row-lg-6 justify-content-center">
@@ -90,7 +92,7 @@ function App() {
               students to comprehend the workings of Dijkstra's algorithm in a
               simpler and more straightforward manner.
             </p>
-            <div style={{ display: "flex", justifyContent: "center", marginTop: "2rem"}}>
+            <div style={{ display: "flex", justifyContent: "center", marginTop: "2rem" }}>
               <CustomLink />
             </div>
           </div>
