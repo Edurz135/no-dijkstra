@@ -9,7 +9,7 @@ function App() {
   // const { translate } = useTranslation();
   return (
     <div>
-      <div className="sec-container home-sec">
+      <div className="sec-container home-sec" id="home">
         <CustomNavbar />
         <div className="content-layer">
           <div className="nav">
@@ -43,7 +43,7 @@ function App() {
           <span>DIJKSTRA</span>
         </div>
       </div>
-      <div className="sec-container description-sec container-fluid">
+      <div className="sec-container description-sec container-fluid" id="description">
         <CustomNavbar />
         <div className="row align-items-center">
           <div className="row">
@@ -74,10 +74,10 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="sec-container algorithm-sec">
+      <div className="sec-container algorithm-sec" id="algorithm">
         <CustomNavbar />
       </div>
-      <div className="sec-container about-sec container-fluid">
+      <div className="sec-container about-sec container-fluid" id="about">
         <CustomNavbar />
         <div className="row align-items-center">
           <div className="row row-lg-6 justify-content-center">
@@ -90,7 +90,9 @@ function App() {
               students to comprehend the workings of Dijkstra's algorithm in a
               simpler and more straightforward manner.
             </p>
-            <CustomLink />
+            <div style={{ display: "flex", justifyContent: "center", marginTop: "2rem"}}>
+              <CustomLink />
+            </div>
           </div>
         </div>
       </div>

@@ -31,8 +31,11 @@
 
 .nav-item {
   margin: 0rem 2.2rem;
-  color: var(--on-secondary);
   position: relative;
+}
+.nav-item > a{
+  text-decoration: none;
+  color: var(--on-secondary);
 }
 
 .nav-item-dot{

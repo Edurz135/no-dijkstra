@@ -3,22 +3,19 @@ import "./CustomLink.css";
 
 export default function CustomLink() {
   return (
-    <div
-      style={{
-        border: "3px solid brown",
-        borderRadius: "999px",
-        height: "80px",
-        padding: "8px",
-        display: "flex",
-      }}
-    >
-      <img style={{ height: "50px", borderRadius: "50%" }} src="/profile.png" />
-      <div>
-        <p style={{ margin: "0px" }}>Eduardo Ramón</p>
-        <p style={{ margin: "0px" }}>System Engineer Student</p>
-        <p style={{ margin: "0px" }}>at University of Lima</p>
+    <div className="custom-link">
+      <img src="/profile.png" className="profile" />
+      <div className="text-container">
+        <span className="title">Eduardo Ramón</span>
+        <span className="description">System Engineer Student</span>
+        <span className="description">at University of Lima</span>
       </div>
-      <img style={{ height: "50px", borderRadius: "50%" }} src="/profile.png" />
+      <a href="https://pe.linkedin.com/in/eram%C3%B3n" target="_blank">
+        <img src="/linkedin.png" className="linkedin" />
+      </a>
+      <a href="https://github.com/Edurz135" target="_blank">
+        <img src="/github.png" className="github" />
+      </a>
     </div>
   );
 }

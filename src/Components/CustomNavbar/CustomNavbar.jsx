@@ -5,10 +5,10 @@ export default function CustomNavbar() {
     <div className="custom-navbar container-fluid">
       <div className="row">
         <div className="col">
-          <span className="nav-item">HOME <div className="nav-item-dot"></div></span>
-          <span className="nav-item">DESCRIPTION <div className="nav-item-dot"></div></span>
-          <span className="nav-item">ALGORITHM <div className="nav-item-dot"></div></span>
-          <span className="nav-item">ABOUT <div className="nav-item-dot"></div></span>
+          <span className="nav-item"><a href="#home">HOME</a> <div className="nav-item-dot"></div></span>
+          <span className="nav-item"><a href="#description">DESCRIPTION</a> <div className="nav-item-dot"></div></span>
+          <span className="nav-item"><a href="#algorithm">ALGORITHM</a> <div className="nav-item-dot"></div></span>
+          <span className="nav-item"><a href="#about">ABOUT</a> <div className="nav-item-dot"></div></span>
         </div>
       </div>
     </div>
