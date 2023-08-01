@@ -10,8 +10,8 @@ function App() {
   // const { translate } = useTranslation();
   return (
     <div>
+      <CustomNavbar />
       <div className="sec-container home-sec" id="home">
-        <CustomNavbar />
         <div className="content-layer">
           <div className="nav">
             <span className="logo">EDURZ</span>
@@ -45,7 +45,7 @@ function App() {
         </div>
       </div>
       <div className="sec-container description-sec" id="description">
-        <CustomNavbar />
+        {/* <CustomNavbar /> */}
         <div className="row align-items-center">
           <div className="row">
             <div className="col-md-6">
@@ -76,11 +76,10 @@ function App() {
         </div>
       </div>
       <div className="sec-container algorithm-sec" id="algorithm">
-        <CustomNavbar />
+        {/* <CustomNavbar /> */}
       </div>
       <div className="sec-container about-sec" id="about" style={{ position: "relative" }}>
-        <CustomFooter />
-        <CustomNavbar />
+        {/* <CustomNavbar /> */}
         <div className="row align-items-center">
           <div className="row row-lg-6 justify-content-center">
             <p className="title">I AM ON A MISSION TO PROVIDE AN</p>
@@ -97,8 +96,8 @@ function App() {
             </div>
           </div>
         </div>
+        <CustomFooter />
       </div>
-      <div></div>
     </div>
   );
 }

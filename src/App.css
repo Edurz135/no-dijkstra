@@ -1,8 +1,6 @@
 * {
   margin: 0;
   padding: 0;
-  top: 0;
-  left: 0;
   font-family: Bayon, Poppins;
 }
 
@@ -14,6 +12,7 @@
   --on-secondary-60: rgba(46, 11, 7, 0.6);
   --tertiary: #56cfc9;
 }
+
 ::-webkit-scrollbar {
   display: none;
 }

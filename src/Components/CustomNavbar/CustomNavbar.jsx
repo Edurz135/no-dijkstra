@@ -2,7 +2,7 @@ import React from "react";
 import "./CustomNavbar.css";
 export default function CustomNavbar() {
   return (
-    <div className="custom-navbar container-fluid">
+    <div className="custom-navbar">
       <div className="row">
         <div className="col">
           <span className="nav-item"><a href="#home">HOME</a> <div className="nav-item-dot"></div></span>

@@ -1,11 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  top: 0;
-  left: 0;
-  font-family: Bayon, Poppins;
-}
-
 :root {
   --on-primary: #f9e9d1;
   --primary: #f9c42c;
