@@ -159,16 +159,17 @@ html {
 }
 
 .home-sec > .words {
+  transform-origin: center right;
   position: relative;
-  right: 500px;
+  transform: rotate(-9deg) translateY(-50%) translateX(20px);
+  right: 550px;
   top: 500px;
-  transform: rotate(-9deg);
-  font-size: 8rem;
-  line-height: 6rem;
   display: flex;
   flex-direction: column;
   align-items: end;
   z-index: 10;
+  font-size: 8rem;
+  line-height: 6rem;
 }
 
 .home-sec .words span {
