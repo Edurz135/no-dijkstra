@@ -4,6 +4,11 @@
   font-family: Bayon, Poppins;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
 :root {
   --on-primary: #f9e9d1;
   --primary: #f9c42c;
@@ -19,9 +24,9 @@
 
 .sec-container {
   min-height: 100vh;
+  scroll-snap-align: start;
   position: relative;
 }
-
 
 .home-sec {
   min-height: 100vh;

@@ -11,7 +11,7 @@ function App() {
   return (
     <div>
       <CustomNavbar />
-      <div className="sec-container home-sec" id="home">
+      <section className="sec-container home-sec" id="home">
         <div className="content-layer">
           <div className="body">
             <div className="header">
@@ -39,8 +39,8 @@ function App() {
           <span>I’M</span>
           <span>DIJKSTRA</span>
         </div>
-      </div>
-      <div className="sec-container description-sec" id="description">
+      </section>
+      <section className="sec-container description-sec" id="description">
         {/* <CustomNavbar /> */}
         <div className="row align-items-center">
           <div className="row">
@@ -70,11 +70,11 @@ function App() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="sec-container algorithm-sec" id="algorithm">
+      </section>
+      <section className="sec-container algorithm-sec" id="algorithm">
         {/* <CustomNavbar /> */}
-      </div>
-      <div className="sec-container about-sec" id="about" style={{ position: "relative" }}>
+      </section>
+      <section className="sec-container about-sec" id="about" style={{ position: "relative" }}>
         {/* <CustomNavbar /> */}
         <div className="row align-items-center">
           <div className="row row-lg-6 justify-content-center">
@@ -93,7 +93,7 @@ function App() {
           </div>
         </div>
         <CustomFooter />
-      </div>
+      </section>
     </div>
   );
 }
