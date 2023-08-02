@@ -1,12 +1,12 @@
 import React from "react";
-import "./App.css";
-import CustomCard from "./Components/CustomCard/CustomCard";
-import CustomNavbar from "./Components/CustomNavbar/CustomNavbar";
-import CustomLink from "./Components/CustomLink/CustomLink";
-import CustomFooter from "./Components/CustomFooter/CustomFooter";
+import "./MainPage.css";
+import CustomCard from "../../Components/CustomCard/CustomCard";
+import CustomNavbar from "../../Components/CustomNavbar/CustomNavbar";
+import CustomLink from "../../Components/CustomLink/CustomLink";
+import CustomFooter from "../../Components/CustomFooter/CustomFooter";
 // import { useTranslation } from 'react-i18next'
 // import LanguageSelector from "./Components/LanguageSelector/LanguageSelector";
-function App() {
+export default function MainPage() {
   // const { translate } = useTranslation();
   return (
     <div>
@@ -77,7 +77,8 @@ function App() {
       <section className="sec-container algorithm-sec" id="algorithm">
         <div className="row align-items-center" style={{ padding: "8rem" }}>
           <div className="row row-lg-6 justify-content-center">
-            <img src="/EdgerHands.png" style={{width: "1100px"}}/>
+            <a href="/editor" target="_blank">Try Dijkstra Editor</a>
+            <img src="/EdgerHands.png" style={{ width: "1100px" }} />
           </div>
         </div>
       </section>
@@ -103,5 +104,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

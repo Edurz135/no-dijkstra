@@ -1,12 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import MainPage from './pages/main/MainPage';
+import EditorPage from './pages/editor/EditorPage';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <MainPage />
+  },
+  {
+    path: "/editor",
+    element: <EditorPage />
+  },
+])
+
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
