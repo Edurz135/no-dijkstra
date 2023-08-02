@@ -13,10 +13,6 @@ function App() {
       <CustomNavbar />
       <div className="sec-container home-sec" id="home">
         <div className="content-layer">
-          <div className="nav">
-            <span className="logo">EDURZ</span>
-            <span className="contact-btn">CONTACT ME</span>
-          </div>
           <div className="body">
             <div className="header">
               <span className="title">DIJKSTRA ALGORITHM</span>

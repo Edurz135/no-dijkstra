@@ -9,10 +9,35 @@
 
 .custom-navbar {
   position: fixed;
-  padding: 3.5rem 0rem;
-  left: 50%;
-  transform: translateX(-50%);
+  margin: 3.5rem 0rem;
+  padding: 0rem 7rem;
   z-index: 10;
+  width: 100%;
+}
+
+.custom-navbar .cn-container{
+  padding: 0rem 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-radius: 999px;
+  /* backdrop-filter: blur(10px);
+  backdrop-filter: sepia(90%); */
+}
+
+.custom-navbar .logo {
+  color: var(--on-secondary);
+  font-size: 2rem;
+}
+
+.custom-navbar .contact-btn {
+  color: var(--on-primary);
+  background-color: var(--on-secondary-60);
+  font-size: 1.1rem;
+  padding: 0.3rem 30px;
+  border-radius: 3rem;
 }
 
 .custom-navbar .row {
