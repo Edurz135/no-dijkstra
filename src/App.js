@@ -35,15 +35,18 @@ function App() {
         <div className="bg-layer mouth">
           <img src="/EdgerPortraitMouth.png" />
         </div>
-        <div className="bg-layer words">
-          <span>I’M</span>
-          <span>DIJKSTRA</span>
+        <div className="words">
+          <div>
+            <span>I’M</span>
+          </div>
+          <div>
+            <span>DIJKSTRA</span>
+          </div>
         </div>
       </section>
       <section className="sec-container description-sec" id="description">
-        {/* <CustomNavbar /> */}
         <div className="row align-items-center">
-          <div className="row">
+          <div className="row gx-5 gy-3" style={{ padding: "8rem" }}>
             <div className="col-md-6">
               <CustomCard
                 title="ORIGIN"
@@ -72,11 +75,14 @@ function App() {
         </div>
       </section>
       <section className="sec-container algorithm-sec" id="algorithm">
-        {/* <CustomNavbar /> */}
+        <div className="row align-items-center" style={{ padding: "8rem" }}>
+          <div className="row row-lg-6 justify-content-center">
+            <img src="/EdgerHands.png" style={{width: "1100px"}}/>
+          </div>
+        </div>
       </section>
       <section className="sec-container about-sec" id="about" style={{ position: "relative" }}>
-        {/* <CustomNavbar /> */}
-        <div className="row align-items-center">
+        <div className="row align-items-center" style={{ padding: "8rem" }}>
           <div className="row row-lg-6 justify-content-center">
             <p className="title">I AM ON A MISSION TO PROVIDE AN</p>
             <p className="title">

@@ -35,7 +35,7 @@ html {
 }
 
 .home-sec .content-layer {
-  padding: 3rem 8rem;
+  padding: 6rem 8rem;
   position: absolute;
   z-index: 1;
   width: fill-available;
@@ -69,7 +69,8 @@ html {
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  height: 80%;
+  height: 100%;
+  position: relative;
 }
 
 .home-sec .content-layer .body .header {
@@ -93,6 +94,10 @@ html {
 }
 
 .home-sec .content-layer .body .footer {
+  position: relative;
+  bottom: 0;
+  top: auto;
+  left: 0;
   display: flex;
   flex-direction: column;
 }
@@ -129,7 +134,7 @@ html {
   animation-name: mymove;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  animation-duration: 1s;
+  animation-duration: 1.5s;
 }
 
 @keyframes mymove {
@@ -153,14 +158,22 @@ html {
   }
 }
 
-.home-sec .words {
-  top: 400px;
+.home-sec > .words {
+  position: relative;
+  right: 500px;
+  top: 500px;
+  transform: rotate(-9deg);
+  font-size: 8rem;
+  line-height: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  z-index: 10;
 }
 
 .home-sec .words span {
   font-family: "Racing Sans One", cursive;
   color: var(--on-secondary);
-  font-size: 6rem;
 }
 
 .description-sec {

@@ -12,6 +12,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* padding: 0rem 0rem; */
 }
 .custom-card > .title {
   font-size: 3rem;
@@ -22,5 +23,5 @@
   font-size: 1.3rem;
   font-family: Poppins;
   color: var(--on-secondary);
-  text-align: center;
+  text-align: justify;
 }
