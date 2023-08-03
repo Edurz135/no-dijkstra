@@ -219,7 +219,7 @@ const OverviewFlow = () => {
   });
 
   return (
-    <div className="dndflow" style={{ position: "relative" }}>
+    <div className="dndflow" style={{ position: "relative", backgroundColor: "#f9e9d1" }}>
       <div
         style={{
           position: "absolute",
