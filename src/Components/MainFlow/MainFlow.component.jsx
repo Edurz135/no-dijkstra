@@ -82,12 +82,14 @@ const OverviewFlow = () => {
       targetPosition: Position.Left,
       style: {
         borderRadius: "100%",
-        backgroundColor: "#fff",
+        backgroundColor: "#f9e9d1",
         width: 50,
         height: 50,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        fontSize: "1.5rem",
+        color: " #2e0b07"
       },
       data: { label: `${(newNodeId + 9).toString(36).toUpperCase()}` },
     };

@@ -1,7 +1,16 @@
+:root {
+  --on-primary: #f9e9d1;
+  --primary: #f9c42c;
+  --secondary: #dc2510;
+  --on-secondary: #2e0b07;
+  --on-secondary-60: rgba(46, 11, 7, 0.6);
+  --tertiary: #56cfc9;
+}
+
 .react-flow__node-custom {
   font-size: 10px;
   width: 180px;
-  background: #f5f5f6;
+  background: #f9e9d1;
   color: #222;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 15%), 0 2px 4px -1px rgb(0 0 0 / 8%);
   border-radius: 2px;
@@ -13,7 +22,7 @@
   width: 6px;
   height: 10px;
   border-radius: 2px;
-  background-color: #778899;
+  background-color: var(--on-secondary);
 }
 
 .react-flow__node.circle {
@@ -24,6 +33,19 @@
   justify-content: center;
   align-items: center;
   font-weight: 700;
+}
+
+.react-flow__node.react-flow__node-default {
+  background-color: var(--on-primary) !important;
+  font-size: 1.5rem  !important;
+}
+
+.react-flow__node.react-flow__edge {
+  fill: var(--on-secondary) !important;
+}
+
+.react-flow__edge {
+  fill: var(--on-secondary) !important;
 }
 
 .react-flow__node.annotation {
@@ -38,6 +60,14 @@
 
 .react-flow__node.annotation .react-flow__handle {
   display: none;
+}
+
+.react-flow .react-flow__handle {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  border-color: var(--on-secondary);
 }
 
 .custom-node__header {
@@ -123,7 +153,7 @@ button {
   margin-top: 10px;
 }
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   .dndflow {
     flex-direction: row;
   }
@@ -131,4 +161,4 @@ button {
   .dndflow aside {
     max-width: 250px;
   }
-}
+} */
