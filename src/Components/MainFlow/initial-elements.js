@@ -1,17 +1,8 @@
-import {Position} from 'reactflow';
+import { Position } from 'reactflow';
 
 const nodeDefaults = {
   sourcePosition: Position.Right,
   targetPosition: Position.Left,
-  style: {
-    borderRadius: '100%',
-    backgroundColor: '#fff',
-    width: 50,
-    height: 50,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
 };
 
 export const nodes = [
@@ -30,7 +21,7 @@ export const nodes = [
     data: {
       label: 'B',
     },
-    position: { x: 200, y: 100 },
+    position: { x: 150, y: 75 },
     ...nodeDefaults,
   },
   {
@@ -39,7 +30,7 @@ export const nodes = [
     data: {
       label: 'C',
     },
-    position: { x: 200, y: -100 },
+    position: { x: 150, y: -75 },
     ...nodeDefaults,
   },
   {
@@ -48,7 +39,7 @@ export const nodes = [
     data: {
       label: 'D',
     },
-    position: { x: 400, y: 100 },
+    position: { x: 300, y: 75 },
     ...nodeDefaults,
   },
   {
@@ -57,7 +48,7 @@ export const nodes = [
     data: {
       label: 'E',
     },
-    position: { x: 400, y: -100 },
+    position: { x: 300, y: -75 },
     ...nodeDefaults,
   },
   {
@@ -66,7 +57,7 @@ export const nodes = [
     data: {
       label: 'F',
     },
-    position: { x: 600, y: 0 },
+    position: { x: 450, y: 0 },
     ...nodeDefaults,
   },
 ];
@@ -74,7 +65,7 @@ export const nodes = [
 export const edges = [
   { id: 'e1-2', source: '1', target: '2', label: '5', animated: false },
   { id: 'e1-3', source: '1', target: '3', label: '3', animated: false },
-  { id: 'e3-5', source: '3', target: '5', label: '5', animated: false},
+  { id: 'e3-5', source: '3', target: '5', label: '5', animated: false },
   { id: 'e2-5', source: '2', target: '5', label: '2', animated: false },
   { id: 'e2-4', source: '2', target: '4', label: '7', animated: false },
   { id: 'e4-6', source: '4', target: '6', label: '10', animated: false },

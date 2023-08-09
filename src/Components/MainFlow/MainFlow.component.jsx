@@ -250,7 +250,7 @@ const OverviewFlow = () => {
           }}
         ></input>
       </div>
-      <Sidebar FindPathHandler={FindShortestPath} />
+      {/* <Sidebar FindPathHandler={FindShortestPath} /> */}
       <ReactFlowProvider>
         <div className="reactflow-wrapper" ref={reactFlowWrapper}>
           <ReactFlow
@@ -278,9 +278,9 @@ const OverviewFlow = () => {
             onDragOver={onDragOver}
             fitView
           >
-            <MiniMap style={minimapStyle} zoomable pannable />
-            <Controls />
-            <Background color="#aaa" gap={16} />
+            {/* <MiniMap style={minimapStyle} zoomable pannable /> */}
+            {/* <Controls /> */}
+            <Background color="#aaa" gap={14} />
           </ReactFlow>
         </div>
       </ReactFlowProvider>

@@ -7,7 +7,44 @@
   --tertiary: #56cfc9;
 }
 
-.react-flow__node-custom {
+.react-flow {
+  background-color: var(--on-primary);
+}
+
+.react-flow__node {
+  background-color: var(--on-primary) !important;
+  color: var(--on-secondary);
+  font-size: 1.5rem !important;
+  border-color: var(--on-secondary);
+  width: 45px !important;
+  height: 45px !important;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.react-flow__edge-path {
+  stroke: var(--on-secondary);
+}
+
+.react-flow__edge-text {
+  fill: var(--on-secondary);
+}
+
+.react-flow__edge-textbg {
+  fill: var(--on-primary);
+}
+
+.react-flow .react-flow__handle {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  border-color: var(--on-secondary);
+}
+
+/* .react-flow__node-custom {
   font-size: 10px;
   width: 180px;
   background: #f9e9d1;
@@ -23,8 +60,8 @@
   height: 10px;
   border-radius: 2px;
   background-color: var(--on-secondary);
-}
-
+} */
+/* 
 .react-flow__node.circle {
   border-radius: 50%;
   width: 60px;
@@ -33,20 +70,13 @@
   justify-content: center;
   align-items: center;
   font-weight: 700;
-}
-
+} */
+/* 
 .react-flow__node.react-flow__node-default {
   background-color: var(--on-primary) !important;
   font-size: 1.5rem  !important;
-}
+} */
 
-.react-flow__node.react-flow__edge {
-  fill: var(--on-secondary) !important;
-}
-
-.react-flow__edge {
-  fill: var(--on-secondary) !important;
-}
 
 .react-flow__node.annotation {
   border-radius: 0;
@@ -60,14 +90,6 @@
 
 .react-flow__node.annotation .react-flow__handle {
   display: none;
-}
-
-.react-flow .react-flow__handle {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: var(--primary);
-  border-color: var(--on-secondary);
 }
 
 .custom-node__header {
