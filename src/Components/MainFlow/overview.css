@@ -24,14 +24,22 @@
   justify-content: center;
 }
 
+/* When a edge is animated */
+.react-flow__edge.animated > .react-flow__edge-path {
+  stroke: var(--secondary) !important;
+}
+
+/* Edge */
 .react-flow__edge-path {
   stroke: var(--on-secondary);
 }
 
+/* Edge Text */
 .react-flow__edge-text {
   fill: var(--on-secondary);
 }
 
+/* Edge Text BG */
 .react-flow__edge-textbg {
   fill: var(--on-primary);
 }
