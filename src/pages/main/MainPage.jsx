@@ -45,8 +45,8 @@ export default function MainPage() {
         </div>
       </section>
       <section className="sec-container description-sec" id="description">
-        <div className="row align-items-center">
-          <div className="row gx-5 gy-3" style={{ padding: "8rem" }}>
+        <div className="row">
+          <div className="row gy-3">
             <div className="col-md-6">
               <CustomCard
                 title="ORIGIN"
@@ -83,7 +83,7 @@ export default function MainPage() {
         </div>
       </section>
       <section className="sec-container about-sec" id="about" style={{ position: "relative" }}>
-        <div className="row align-items-center" style={{ padding: "8rem" }}>
+        <div className="row align-items-center">
           <div className="row row-lg-6 justify-content-center">
             <p className="title">I AM ON A MISSION TO PROVIDE AN</p>
             <p className="title">

@@ -24,7 +24,7 @@ export default function CustomNavbar() {
           </span>
         </div>
         <div>
-          <span className="contact-btn">CONTACT ME</span>
+          <p className="contact-btn">CONTACT ME</p>
         </div>
       </div>
     </div>
