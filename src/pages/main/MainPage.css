@@ -28,6 +28,16 @@ html {
   position: relative;
 }
 
+.sec-container > .just-center {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
 .home-sec {
   min-height: 100vh;
   background-color: var(--primary);

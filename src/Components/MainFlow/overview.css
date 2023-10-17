@@ -85,7 +85,6 @@
   font-size: 1.5rem  !important;
 } */
 
-
 .react-flow__node.annotation {
   border-radius: 0;
   text-align: left;
@@ -132,16 +131,6 @@
   padding: 15px 10px;
   font-size: 12px;
   background: #fcfcfc;
-}
-
-.control-container {
-  position: absolute;
-  z-index: 1;
-  padding: 10px;
-  margin: 5px;
-  backdrop-filter: blur(2px);
-  border: 1px solid rgb(204, 204, 204);
-  border-radius: 15px;
 }
 
 .control-algorithm {
@@ -192,3 +181,39 @@ button {
     max-width: 250px;
   }
 } */
+
+.control-container {
+  position: absolute;
+  margin: 1rem;
+}
+.control-container > .title {
+  position: absolute;
+  color: var(--primary);
+  font-size: 4rem;
+  line-height: 4rem;
+  z-index: 1;
+  top: 0;
+}
+.container {
+  position: absolute;
+  z-index: 2;
+  /* display: flex; */
+  flex-direction: row;
+}
+.container > .dndnode {
+  background-color: var(--on-primary) !important;
+  color: var(--on-secondary);
+  font-size: 2rem !important;
+  border-color: var(--on-secondary);
+  width: 45px !important;
+  height: 45px !important;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.control-container > .container > button {
+  width: 100px;
+  height: 30px;
+}

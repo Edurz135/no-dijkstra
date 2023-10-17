@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from "react-i18next";
 
 const SideBar = (props) => {
   const { t } = useTranslation();
@@ -13,27 +13,25 @@ const SideBar = (props) => {
 
   return (
     <div className="control-container">
-      <span>{t("control.title")}</span>
-      <div
-        className="dndnode"
-        onDragStart={(event) => onDragStart(event, "default")}
-        draggable
-      >
-        {t("control.node")}
-      </div>
-      <div className="control-algorithm">
-        <span>{t("control.from")}</span>
-        <br />
-        <input
-          maxLength={1}
-          onChange={(e) => {
-            const val = e.target.value.toUpperCase();
-            setSource(val);
-          }}
-        ></input>
-        <br />
-        <span>{t("control.to")}</span>
-        <br />
+      <span className="title">COMPONENTS</span>
+
+      <div className="container">
+        <div
+          className="dndnode"
+          onDragStart={(event) => onDragStart(event, "default")}
+          draggable
+        >
+          +
+        </div>
+        <div>
+          <input
+            maxLength={1}
+            onChange={(e) => {
+              const val = e.target.value.toUpperCase();
+              setSource(val);
+            }}
+          ></input>
+        </div>
         <input
           maxLength={1}
           onChange={(e) => {
@@ -41,15 +39,12 @@ const SideBar = (props) => {
             setTarget(val);
           }}
         ></input>
-        <br />
         <button
           type="button"
           onClick={() => {
             props.FindPathHandler(source, target);
           }}
-        >
-          {t("control.find-btn")}
-        </button>
+        >Search</button>
       </div>
     </div>
   );

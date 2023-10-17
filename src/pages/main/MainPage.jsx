@@ -75,14 +75,45 @@ export default function MainPage() {
         </div>
       </section>
       <section className="sec-container algorithm-sec" id="algorithm">
-        <div className="row align-items-center" style={{ padding: "8rem" }}>
+        <div
+          className="just-center"
+          style={{ zIndex: 2, fontWeight: "bold", fontStyle: "italic"}}
+        >
+          <a
+            href="/editor"
+            target="_blank"
+            style={{
+              textDecoration: "none",
+              color: "#2e0b07",
+              fontSize: "1.8rem",
+              textAlign: "center",
+              lineHeight: "0.6rem",
+              letterSpacing: "0.2rem",
+              paddingTop: "35px",
+            }}
+          >
+            <p>Try</p>
+            <p>Dijkstra</p>
+            <p>Editor</p>
+          </a>
+        </div>
+        <div
+          className="row align-items-center just-center"
+          style={{ padding: "8rem" }}
+        >
           <div className="row row-lg-6 justify-content-center">
-            <a href="/editor" target="_blank">Try Dijkstra Editor</a>
             <img src="/EdgerHands.png" style={{ width: "1100px" }} />
           </div>
         </div>
+        <div className="just-center" style={{ zIndex: 1, top: "-150px" }}>
+          <img src="/EdgerNecklace.png" />
+        </div>
       </section>
-      <section className="sec-container about-sec" id="about" style={{ position: "relative" }}>
+      <section
+        className="sec-container about-sec"
+        id="about"
+        style={{ position: "relative" }}
+      >
         <div className="row align-items-center">
           <div className="row row-lg-6 justify-content-center">
             <p className="title">I AM ON A MISSION TO PROVIDE AN</p>
@@ -94,7 +125,13 @@ export default function MainPage() {
               students to comprehend the workings of Dijkstra's algorithm in a
               simpler and more straightforward manner.
             </p>
-            <div style={{ display: "flex", justifyContent: "center", marginTop: "2rem" }}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                marginTop: "2rem",
+              }}
+            >
               <CustomLink />
             </div>
           </div>
