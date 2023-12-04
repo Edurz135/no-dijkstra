@@ -5,12 +5,13 @@ import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import MainPage from './pages/main/MainPage';
 import EditorPage from './pages/editor/EditorPage';
-
+import HomePage from './pages/home/home.page';
+import "./index.css"
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainPage />
+    element: <HomePage />
   },
   {
     path: "/editor",

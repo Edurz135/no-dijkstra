@@ -1,0 +1,27 @@
+.dijkstra-mouth {
+  animation-name: mymove;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-duration: 1.5s;
+}
+
+@keyframes mymove {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  15% {
+    transform: translate(10px, 25px);
+  }
+  50% {
+    transform: translate(0px, 0px);
+  }
+  65% {
+    transform: translate(10px, 25px);
+  }
+  80% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(10px, 25px);
+  }
+}

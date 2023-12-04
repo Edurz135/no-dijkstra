@@ -1,5 +1,5 @@
 import React from "react";
-import "./MainPage.css";
+// import "./MainPage.css";
 import CustomCard from "../../Components/CustomCard/CustomCard";
 import CustomNavbar from "../../Components/CustomNavbar/CustomNavbar";
 import CustomLink from "../../Components/CustomLink/CustomLink";
