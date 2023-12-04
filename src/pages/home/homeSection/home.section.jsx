@@ -46,15 +46,15 @@ export default function HomeSection() {
             </div>
           </div>
         </div>
-        <div className="fixed w-full h-full flex justify-end z-40 dijkstra-mouth">
+        {/* <div className="absolute w-full h-full flex justify-end z-40 dijkstra-mouth">
           <img className="h-screen" src="/EdgerPortraitMouth.png" />
-        </div>
-        <div className="fixed w-full h-full flex justify-end z-30">
+        </div> */}
+        <div className="absolute w-full h-full flex justify-end z-30">
           <img className="h-screen" src="/EdgerPortraitWithoutMouth.png" />
         </div>
-        <div className="fixed z-50 flex flex-column align-items-end text-con-secondary rotate-[-8deg] right-[500px] top-[400px]">
-          <p className="font-fdecorated text-8xl">I’M</p>
-          <p className="font-fdecorated text-8xl">DIJKSTRA</p>
+        <div className="absolute z-50 flex flex-column align-items-end text-con-secondary rotate-[-8deg] right-[500px] top-[400px]">
+          <p className="font-fdecorated text-9xl">I’M</p>
+          <p className="font-fdecorated text-9xl">DIJKSTRA</p>
         </div>
       </section>
     </div>
