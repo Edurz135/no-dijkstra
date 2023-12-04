@@ -11,7 +11,7 @@ export default function DescriptionSection() {
                 className="font-fheader text-8xl text-con-primary"
                 style={{ "text-shadow": "5px 5px #dc2510" }}
               >
-                DIJKSTRA ALGORITHM
+                DESCRIPTION SECTION
               </p>
             </div>
           </div>
