@@ -1,22 +1,39 @@
 import React from "react";
 // import "./home.section.css";
+import CustomCard from "../../../Components/CustomCard/CustomCard";
 export default function DescriptionSection() {
   return (
-    <div>
-      <section className="relative min-h-screen bg-cprimary" id="description">
-        <div className="absolute h-full w-full p-20 z-50">
-          <div className="h-full flex flex-column justify-around">
-            <div>
-              <p
-                className="font-fheader text-8xl text-con-primary"
-                style={{ "text-shadow": "5px 5px #dc2510" }}
-              >
-                DIJKSTRA ALGORITHM
-              </p>
+    <section className="h-screen bg-con-primary" id="description">
+      <div className="h-full p-20 z-50 flex items-center">
+        <div>
+          <div className="row">
+            <div className="col-md-6">
+              <CustomCard
+                title="ORIGIN"
+                description="Created by Edsger Dijkstra on 1956"
+              />
+            </div>
+            <div className="col-md-6">
+              <CustomCard
+                title="ALGORITHM"
+                description="An algorithm for finding the shortest paths between nodes in a weighted graph"
+              />
+            </div>
+            <div className="col-md-6">
+              <CustomCard
+                title="IMPORTANCE"
+                description="Most influential algorithms in the history of computer science and graph theory. Had a significant impact on numerous fields of study and technologies that we use today."
+              />
+            </div>
+            <div className="col-md-6">
+              <CustomCard
+                title="APPLICATIONS"
+                description="Applied on route planning in maps, routing protocols in computer networks, analysis of transportation, among others."
+              />
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }

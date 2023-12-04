@@ -8,7 +8,7 @@ import {
 
 export default function HomePage() {
   return (
-    <div>
+    <div className="p-0 m-0">
       <HomeSection />
       <DescriptionSection />
       <AlgorithmSection />
