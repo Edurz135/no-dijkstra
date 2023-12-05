@@ -1,5 +1,5 @@
 import React from "react";
-import "./CustomCard.css";
+import "./customCard.component.css";
 
 export default function CustomCard(props) {
   return (

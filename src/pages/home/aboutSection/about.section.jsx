@@ -1,10 +1,10 @@
 import React from "react";
-import CustomLink from "../../../Components/CustomLink/CustomLink";
-// import "./home.section.css";
+import { CustomLink } from "../../../components/";
+
 export default function AboutSection() {
   return (
     <div>
-      <section className="bg-con-primary" style={{height: "90vh"}} id="about">
+      <section className="bg-con-primary" style={{ height: "90vh" }} id="about">
         <div className="h-full p-20 z-40 flex items-center">
           <div>
             <div className="h-full flex flex-column align-center text-center">

@@ -1,0 +1,219 @@
+:root {
+  --on-primary: #f9e9d1;
+  --primary: #f9c42c;
+  --secondary: #dc2510;
+  --on-secondary: #2e0b07;
+  --on-secondary-60: rgba(46, 11, 7, 0.6);
+  --tertiary: #56cfc9;
+}
+
+.react-flow {
+  background-color: var(--on-primary);
+}
+
+.react-flow__node {
+  background-color: var(--on-primary) !important;
+  color: var(--on-secondary);
+  font-size: 1.5rem !important;
+  border-color: var(--on-secondary);
+  width: 45px !important;
+  height: 45px !important;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* When a edge is animated */
+.react-flow__edge.animated > .react-flow__edge-path {
+  stroke: var(--secondary) !important;
+}
+
+/* Edge */
+.react-flow__edge-path {
+  stroke: var(--on-secondary);
+}
+
+/* Edge Text */
+.react-flow__edge-text {
+  fill: var(--on-secondary);
+}
+
+/* Edge Text BG */
+.react-flow__edge-textbg {
+  fill: var(--on-primary);
+}
+
+.react-flow .react-flow__handle {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  border-color: var(--on-secondary);
+}
+
+/* .react-flow__node-custom {
+  font-size: 10px;
+  width: 180px;
+  background: #f9e9d1;
+  color: #222;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 15%), 0 2px 4px -1px rgb(0 0 0 / 8%);
+  border-radius: 2px;
+}
+
+.react-flow__node-custom .react-flow__handle {
+  top: 24px;
+  right: -15px;
+  width: 6px;
+  height: 10px;
+  border-radius: 2px;
+  background-color: var(--on-secondary);
+} */
+/* 
+.react-flow__node.circle {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+} */
+/* 
+.react-flow__node.react-flow__node-default {
+  background-color: var(--on-primary) !important;
+  font-size: 1.5rem  !important;
+} */
+
+.react-flow__node.annotation {
+  border-radius: 0;
+  text-align: left;
+  background: white;
+  border: none;
+  line-height: 1.4;
+  width: 225px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 15%), 0 2px 4px -1px rgb(0 0 0 / 8%);
+}
+
+.react-flow__node.annotation .react-flow__handle {
+  display: none;
+}
+
+.custom-node__header {
+  padding: 8px 10px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.custom-node__body {
+  padding: 10px;
+}
+
+.custom-node__select {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.custom-node__select select {
+  width: 100%;
+  margin-top: 5px;
+  font-size: 10px;
+}
+
+.dndflow {
+  flex-direction: column;
+  display: flex;
+  flex-grow: 1;
+  height: 100%;
+}
+
+.dndflow aside {
+  border-right: 1px solid #eee;
+  padding: 15px 10px;
+  font-size: 12px;
+  background: #fcfcfc;
+}
+
+.control-algorithm {
+  width: 80px;
+}
+
+.control-algorithm input,
+button {
+  width: 100%;
+}
+
+.control-algorithm input {
+  text-transform: uppercase;
+}
+
+.control-algorithm button {
+  border-radius: 10px;
+}
+
+.dndflow .dndnode {
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: grab;
+  border-radius: 100%;
+  background-color: #fff;
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+}
+
+.dndflow .reactflow-wrapper {
+  flex-grow: 1;
+  height: 100%;
+}
+
+.dndflow .selectall {
+  margin-top: 10px;
+}
+
+/* @media screen and (min-width: 768px) {
+  .dndflow {
+    flex-direction: row;
+  }
+
+  .dndflow aside {
+    max-width: 250px;
+  }
+} */
+
+.control-container {
+  position: absolute;
+  margin: 1rem;
+}
+.control-container > .title {
+  position: absolute;
+  color: var(--primary);
+  font-size: 4rem;
+  line-height: 4rem;
+  z-index: 1;
+  top: 0;
+}
+.container {
+  position: absolute;
+  z-index: 2;
+  /* display: flex; */
+  flex-direction: row;
+}
+.container > .dndnode {
+  background-color: var(--on-primary) !important;
+  color: var(--on-secondary);
+  font-size: 2rem !important;
+  border-color: var(--on-secondary);
+  width: 45px !important;
+  height: 45px !important;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.control-container > .container > button {
+  width: 100px;
+  height: 30px;
+}

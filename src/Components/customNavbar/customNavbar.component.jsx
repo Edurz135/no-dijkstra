@@ -1,5 +1,5 @@
 import React from "react";
-import "./CustomNavbar.css";
+import "./customNavbar.component.css";
 
 const NavbarItem = (props) => {
   return (

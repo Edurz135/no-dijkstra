@@ -1,6 +1,5 @@
 import React from "react";
-// import "./description.section.css";
-import CustomCard from "../../../Components/CustomCard/CustomCard";
+import { CustomCard } from "../../../components/";
 
 export default function DescriptionSection() {
   return (
