@@ -13,7 +13,7 @@ import ReactFlow, {
 import {
   nodes as initialNodes,
   edges as initialEdges,
-} from "./initial-elements";
+} from "./initialData";
 
 import { CustomNode } from "../../../components";
 import Toolbox from "../toolboxSection/toolbox.section";
