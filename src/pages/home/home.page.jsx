@@ -5,6 +5,7 @@ import {
   AlgorithmSection,
   AboutSection,
 } from "./index.js";
+import CustomFooter from "../../Components/CustomFooter/CustomFooter.jsx";
 
 export default function HomePage() {
   return (
@@ -13,6 +14,7 @@ export default function HomePage() {
       <DescriptionSection />
       <AlgorithmSection />
       <AboutSection />
+      <CustomFooter />
     </div>
   );
 }
