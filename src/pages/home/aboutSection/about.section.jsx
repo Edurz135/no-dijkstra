@@ -5,7 +5,7 @@ export default function AboutSection() {
   return (
     <div>
       <section className="bg-con-primary" style={{height: "90vh"}} id="about">
-        <div className="h-full p-20 z-50 flex items-center">
+        <div className="h-full p-20 z-40 flex items-center">
           <div>
             <div className="h-full flex flex-column align-center text-center">
               <div className="font-fheader text-6xl text-con-secondary">
