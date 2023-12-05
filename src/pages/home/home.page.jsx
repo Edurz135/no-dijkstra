@@ -5,7 +5,7 @@ import {
   AlgorithmSection,
   AboutSection,
 } from "./index.js";
-import {CustomFooter, CustomNavbar} from "../../components/";
+import {CustomFooter, CustomNavbar} from "../../components";
 
 export default function HomePage() {
   const homeSectionRef = useRef(null);
