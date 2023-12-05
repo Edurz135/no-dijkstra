@@ -45,9 +45,9 @@ export default function HomeSection() {
           </div>
         </div>
       </div>
-      {/* <div className="absolute w-full h-full flex justify-end z-30 dijkstra-mouth">
+      <div className="absolute w-full h-full flex justify-end z-30 dijkstra-mouth">
           <img className="h-screen" src="/EdgerPortraitMouth.png" />
-        </div> */}
+        </div>
       <div className="absolute w-full h-full flex justify-end z-20">
         <img className="h-screen" src="/EdgerPortraitWithoutMouth.png" />
       </div>

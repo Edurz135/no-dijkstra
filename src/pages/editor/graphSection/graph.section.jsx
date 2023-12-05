@@ -13,7 +13,7 @@ import ReactFlow, {
 import {
   nodes as initialNodes,
   edges as initialEdges,
-} from "./initial-elements";
+} from "./initialData";
 
 import { CustomNode } from "../../../components";
 import Toolbox from "../toolboxSection/toolbox.section";
@@ -220,6 +220,7 @@ const GraphSection = () => {
       >
         <input
           style={{ width: "100%", height: "100%" }}
+          className="w-12 text-center h-10 border-con-secondary border-2 rounded-md bg-cprimary"
           type="number"
           ref={inputReference}
           onKeyDown={(event) => {
