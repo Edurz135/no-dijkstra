@@ -1,10 +1,11 @@
 import React from "react";
-// import "./home.section.css";
+// import "./description.section.css";
 import CustomCard from "../../../Components/CustomCard/CustomCard";
+
 export default function DescriptionSection() {
   return (
     <section className="h-screen bg-con-primary" id="description">
-      <div className="h-full p-20 z-50 flex items-center">
+      <div className="relative h-full p-20 z-50 flex items-center">
         <div>
           <div className="row">
             <div className="col-md-6">
