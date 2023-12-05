@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
 
 const SideBar = (props) => {
-  const { t } = useTranslation();
   const onDragStart = (event, nodeType) => {
     event.dataTransfer.setData("application/reactflow", nodeType);
     event.dataTransfer.effectAllowed = "move";
@@ -44,7 +42,9 @@ const SideBar = (props) => {
           onClick={() => {
             props.FindPathHandler(source, target);
           }}
-        >Search</button>
+        >
+          Search
+        </button>
       </div>
     </div>
   );

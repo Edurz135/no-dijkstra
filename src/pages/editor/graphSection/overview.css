@@ -12,6 +12,7 @@
 }
 
 .react-flow__node {
+  font-family: "bayon";
   background-color: var(--on-primary) !important;
   color: var(--on-secondary);
   font-size: 1.5rem !important;
@@ -36,6 +37,7 @@
 
 /* Edge Text */
 .react-flow__edge-text {
+  font-family: "bayon";
   fill: var(--on-secondary);
 }
 

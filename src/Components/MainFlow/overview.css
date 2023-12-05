@@ -52,39 +52,6 @@
   border-color: var(--on-secondary);
 }
 
-/* .react-flow__node-custom {
-  font-size: 10px;
-  width: 180px;
-  background: #f9e9d1;
-  color: #222;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 15%), 0 2px 4px -1px rgb(0 0 0 / 8%);
-  border-radius: 2px;
-}
-
-.react-flow__node-custom .react-flow__handle {
-  top: 24px;
-  right: -15px;
-  width: 6px;
-  height: 10px;
-  border-radius: 2px;
-  background-color: var(--on-secondary);
-} */
-/* 
-.react-flow__node.circle {
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 700;
-} */
-/* 
-.react-flow__node.react-flow__node-default {
-  background-color: var(--on-primary) !important;
-  font-size: 1.5rem  !important;
-} */
-
 .react-flow__node.annotation {
   border-radius: 0;
   text-align: left;
@@ -170,47 +137,6 @@ button {
 
 .dndflow .selectall {
   margin-top: 10px;
-}
-
-/* @media screen and (min-width: 768px) {
-  .dndflow {
-    flex-direction: row;
-  }
-
-  .dndflow aside {
-    max-width: 250px;
-  }
-} */
-
-.control-container {
-  position: absolute;
-  margin: 1rem;
-}
-.control-container > .title {
-  position: absolute;
-  color: var(--primary);
-  font-size: 4rem;
-  line-height: 4rem;
-  z-index: 1;
-  top: 0;
-}
-.container {
-  position: absolute;
-  z-index: 2;
-  /* display: flex; */
-  flex-direction: row;
-}
-.container > .dndnode {
-  background-color: var(--on-primary) !important;
-  color: var(--on-secondary);
-  font-size: 2rem !important;
-  border-color: var(--on-secondary);
-  width: 45px !important;
-  height: 45px !important;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .control-container > .container > button {

@@ -8,7 +8,10 @@ module.exports = {
       },
       colors: {
         "con-primary": "#f9e9d1",
-        cprimary: "#f9c42c",
+        cprimary:  {
+          60: "rgba(249, 196, 44, 0.6)",
+          DEFAULT: "#f9c42c",
+        },
         csecondary: "#dc2510",
         "con-secondary": {
           60: "rgba(46, 11, 7, 0.6)",

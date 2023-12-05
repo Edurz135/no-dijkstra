@@ -220,6 +220,7 @@ const GraphSection = () => {
       >
         <input
           style={{ width: "100%", height: "100%" }}
+          className="w-12 text-center h-10 border-con-secondary border-2 rounded-md bg-cprimary"
           type="number"
           ref={inputReference}
           onKeyDown={(event) => {
