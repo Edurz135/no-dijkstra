@@ -1,27 +1,5 @@
-:root {
-  --on-primary: #f9e9d1;
-  --primary: #f9c42c;
-  --secondary: #dc2510;
-  --on-secondary: #2e0b07;
-  --on-secondary-60: rgba(46, 11, 7, 0.6);
-  --tertiary: #56cfc9;
-}
-
-.custom-card { 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  /* padding: 0rem 0rem; */
-}
-.custom-card > .title {
-  font-size: 3rem;
-  color: var(--secondary);
-}
-
-.custom-card > .description {
-  font-size: 1.3rem;
-  font-family: Poppins;
-  color: var(--on-secondary);
-  text-align: justify;
+.font-border {
+  --a-color: #f9e9d1;
+  text-shadow: 4px 0 var(--a-color), -4px 0 var(--a-color), 0 4px var(--a-color), 0 -4px var(--a-color), 1px 1px var(--a-color),
+    -3px -3px var(--a-color), 3px -3px var(--a-color), -3px 3px var(--a-color);
 }
