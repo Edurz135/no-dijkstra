@@ -88,6 +88,7 @@ const GraphSection = () => {
   });
 
   const onEdgeClick = (event, edge) => {
+    console.log(event)
     setTop(`${event.clientY}px`);
     setLeft(`${event.clientX}px`);
     inputReference.current.focus();

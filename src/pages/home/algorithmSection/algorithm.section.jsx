@@ -48,7 +48,7 @@ export default function AlgorithmSection() {
         <div className="absolute z-30">
           <div className="flex flex-column align-center text-center font-fdecorated">
             <a
-              className="text-con-secondary text-center text-2xl leading-none no-underline"
+              className="text-con-secondary text-center text-2xl leading-none no-underline hover:text-con-secondary hover:underline"
               href="/editor"
               target="_blank"
             >
